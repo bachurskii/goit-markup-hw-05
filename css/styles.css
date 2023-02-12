@@ -37,7 +37,9 @@ ul {
   gap: 40px;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
 }
+
 .header-container {
   display: flex;
   align-items: center;
@@ -72,15 +74,40 @@ span.studiolog {
   letter-spacing: 0.02em;
   text-decoration: none;
   font-weight: 500;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigation-header.current::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #404bbf;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+}
+.navigation-header.portfolio::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #404bbf;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
 }
 .main:active {
   color: var(--color4);
 }
 .main:focus {
   color: var(--color4);
+  transition-property: var(--color4);
 }
+
 .main:hover {
   color: var(--color4);
+  transition-property: var(--color4);
 }
 .contact {
   text-decoration: none;
@@ -88,12 +115,16 @@ span.studiolog {
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact:hover {
   color: var(--color4);
+  transition-property: var(--color4);
 }
 .contact:focus {
   color: var(--color4);
+  transition-property: var(--color4);
 }
 .hero {
   background-color: var(--background-color-hero);
@@ -138,15 +169,19 @@ span.studiolog {
   padding-right: 32px;
   justify-content: center;
   border: none;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover {
   background-color: var(--color4);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: var(--color4);
 }
 .button:focus {
   background-color: var(--color4);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: var(--color4);
 }
 .advantages {
   padding-top: 120px;
@@ -262,6 +297,8 @@ span.type {
   padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation:hover {
   background-color: var(--color4);
@@ -275,11 +312,15 @@ span.type {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition-property: 0px 3px 1px rgba(0, 0, 0, 0.1) 0px 2px 1px
+    rgba(0, 0, 0, 0.08) 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .navigation:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition-property: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .links {
   text-decoration: none;
@@ -312,9 +353,37 @@ span.type {
   border: 1px solid #e7e9fc;
   border-top: none;
 }
+.cards-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-top: 40px;
+  padding-bottom: 165px;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 100%);
+  transition: transform 250ms linear;
+}
+.cards-teams:hover .overlay {
+  transform: translate(0, 0);
+}
 .cards-teams:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition-property: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.cards-teams:hover.overlay {
+  transform: translateX(0);
 }
 .title-port {
   margin-bottom: 8px;
@@ -326,6 +395,8 @@ span.type {
 }
 .cards-teams {
   flex-basis: calc((100% - 2 * 24px) / 3);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .advantages-icon {
   background-color: #f4f4fd;
@@ -355,12 +426,16 @@ span.type {
   border-radius: 50%;
   background-color: #4d5ae5;
   fill: #f4f4fd;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-links:hover {
   background-color: #404bbf;
+  transition-property: #404bbf;
 }
 .icon-links:focus {
   background-color: #404bbf;
+  transition-property: #404bbf;
 }
 .client {
   padding-top: 130px;
@@ -385,21 +460,27 @@ span.type {
   align-items: center;
   width: 100%;
   height: 100%;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-links {
   fill: currentColor;
 }
 .link-client:hover {
   border-color: #404bbf;
+  transition-property: #404bbf;
 }
 .link-client:focus {
   border-color: #404bbf;
+  transition-property: #404bbf;
 }
 .link-client:hover {
   color: #404bbf;
+  transition-property: #404bbf;
 }
 .link-client:focus {
   color: #404bbf;
+  transition-property: #404bbf;
 }
 .hero-spant {
   padding-left: 120px;
@@ -424,12 +505,16 @@ span.type {
   border-radius: 50%;
   background-color: #ffffff1a;
   fill: #f4f4fd;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-footer:hover {
   background-color: #31d0aa;
+  transition-property: #31d0aa;
 }
 .link-footer:focus {
   background-color: #31d0aa;
+  transition-property: #31d0aa;
 }
 
 .footer-tittle {
@@ -440,4 +525,39 @@ span.type {
 }
 .first-div {
   display: flex;
+}
+.backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #2e2f4266;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 576px;
+  width: 408px;
+  background-color: #fcfcfc;
+}
+.modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

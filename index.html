@@ -20,7 +20,7 @@
         <nav class="header-nav">
           <ul class="header-list list">
             <li>
-              <a class="navigation-header main" href="">Studio</a>
+              <a class="navigation-header main current" href="">Studio</a>
             </li>
             <li>
               <a class="navigation-header main" href="portfolio.html"
@@ -55,7 +55,9 @@
             Effective Solutions<br />
             for Your Business
           </h1>
-          <button class="button" type="button">Order Service</button>
+          <button class="button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <section class="section-text">
@@ -381,5 +383,17 @@
         </div>
       </div>
     </footer>
+    <!--Modal window-->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="botton" data-modal-close>
+          <svg class="modal-icon" width="8" height="8">
+            <use href="./img/icons.svg#icon-close-modal"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
