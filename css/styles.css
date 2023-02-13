@@ -9,6 +9,8 @@
   --background-color-hero: #2e2f42;
   --background-color-buttton: #4d5ae5;
   --background-color-buttons: #f4f4fd;
+  --transition-duration: 250ms;
+  --transition-function: linear;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -76,6 +78,7 @@ span.studiolog {
   font-weight: 500;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 .navigation-header.current::after {
   content: "";
@@ -86,6 +89,10 @@ span.studiolog {
   border-radius: 2px;
   position: absolute;
   bottom: 0;
+  left: 0;
+}
+.current {
+  color: #404bbf;
 }
 .navigation-header.portfolio::after {
   content: "";
@@ -96,18 +103,20 @@ span.studiolog {
   border-radius: 2px;
   position: absolute;
   bottom: 0;
+  left: 0;
+}
+.portfolio {
+  color: #404bbf;
 }
 .main:active {
   color: var(--color4);
 }
 .main:focus {
   color: var(--color4);
-  transition-property: var(--color4);
 }
 
 .main:hover {
   color: var(--color4);
-  transition-property: var(--color4);
 }
 .contact {
   text-decoration: none;
@@ -117,6 +126,7 @@ span.studiolog {
   letter-spacing: 0.02em;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 .contact:hover {
   color: var(--color4);
@@ -171,17 +181,16 @@ span.studiolog {
   border: none;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, color;
 }
 
 .button:hover {
   background-color: var(--color4);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition-property: var(--color4);
 }
 .button:focus {
   background-color: var(--color4);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition-property: var(--color4);
 }
 .advantages {
   padding-top: 120px;
@@ -299,6 +308,7 @@ span.type {
   padding-right: 24px;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, color, border;
 }
 .navigation:hover {
   background-color: var(--color4);
@@ -312,15 +322,11 @@ span.type {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  transition-property: 0px 3px 1px rgba(0, 0, 0, 0.1) 0px 2px 1px
-    rgba(0, 0, 0, 0.08) 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .navigation:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  transition-property: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .links {
   text-decoration: none;
@@ -379,8 +385,6 @@ span.type {
 .cards-teams:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition-property: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .cards-teams:hover.overlay {
   transform: translateX(0);
@@ -428,14 +432,13 @@ span.type {
   fill: #f4f4fd;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill, background-color;
 }
 .icon-links:hover {
   background-color: #404bbf;
-  transition-property: #404bbf;
 }
 .icon-links:focus {
   background-color: #404bbf;
-  transition-property: #404bbf;
 }
 .client {
   padding-top: 130px;
@@ -462,6 +465,7 @@ span.type {
   height: 100%;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, border;
 }
 .clients-links {
   fill: currentColor;
@@ -472,15 +476,12 @@ span.type {
 }
 .link-client:focus {
   border-color: #404bbf;
-  transition-property: #404bbf;
 }
 .link-client:hover {
   color: #404bbf;
-  transition-property: #404bbf;
 }
 .link-client:focus {
   color: #404bbf;
-  transition-property: #404bbf;
 }
 .hero-spant {
   padding-left: 120px;
@@ -507,14 +508,13 @@ span.type {
   fill: #f4f4fd;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, fill;
 }
 .link-footer:hover {
   background-color: #31d0aa;
-  transition-property: #31d0aa;
 }
 .link-footer:focus {
   background-color: #31d0aa;
-  transition-property: #31d0aa;
 }
 
 .footer-tittle {
@@ -532,7 +532,10 @@ span.type {
   right: 0;
   bottom: 0;
   top: 0;
+  z-index: 100;
   background-color: #2e2f4266;
+  transition: opacity var(--transition-duration) var(--transition-function),
+    visibility var(--transition-duration) var(--transition-function);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -560,4 +563,5 @@ span.type {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
